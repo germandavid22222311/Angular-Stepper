@@ -1,0 +1,108 @@
+
+<!-- <mat-stepper #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Fill out your name</ng-template>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Fill out your address</ng-template>
+      <mat-form-field>
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+               required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-stepper> -->
+
+<mat-stepper class="custom-stepper">
+  <mat-step label="APRENDIZ" state="phone">
+    <div class="container">
+      <form class="my-form">
+        <label class="form-label">Identificación</label>
+        <input type="text" class="form-input" placeholder="Número de cédula">
+        <label class="form-label">Primer Nombre</label>
+        <input type="text" class="form-input" placeholder="Primer nombre">
+        <label class="form-label">Segundo Nombre</label>
+        <input type="text" class="form-input" placeholder="Segundo nombre">
+        <label class="form-label">Primer Apellido</label>
+        <input type="text" class="form-input" placeholder="Primer apellido">
+        <label class="form-label">Segundo Apellido</label>
+        <input type="text" class="form-input" placeholder="Segundo apellido">
+        <label for="fecha_nacimiento" class="form-label">Fecha de nacimiento:</label>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" class="form-input">
+        <label class="form-label">Dirección</label>
+        <input type="text" class="form-input" placeholder="Dirección">
+        <label class="form-label">Correo</label>
+        <input type="text" class="form-input" placeholder="Correo">
+        <label class="form-label">Teléfono</label>
+        <input type="text" class="form-input" placeholder="Teléfono">
+      </form>
+      <div>
+        <button class="form-button btn btn-danger" mat-button matStepperNext>Seguir</button>
+      </div>
+    </div>
+  </mat-step>
+  <mat-step label="ACTIVOS" state="chat">
+    <div class="container">
+    <form class="my-form">
+      <label class="form-label">Programa</label>
+      <input type="text" class="form-input" placeholder="Número de cédula">
+      <label class="form-label">Proyecto de Formacion</label>
+      <input type="text" class="form-input" placeholder="Primer nombre">
+      <label class="form-label">Tipo de grupo </label>
+      <input type="text" class="form-input" placeholder="Segundo nombre">
+      <label class="form-label">Filtrar</label>
+      <input type="text" class="form-input" placeholder="Filtrar">
+    </form>
+    <div class="form-footer text-center">
+      <button class="form-button1 btn btn-danger" mat-button matStepperPrevious>Atras</button>
+      <button class="form-button2 btn btn-danger" mat-button matStepperNext>Siguiente</button>
+    </div>
+  </div>
+  </mat-step>
+  <mat-step label="DOCUMENTOS">
+    <div class="container">
+      <form class="my-form">
+        <label class="form-label">Documento1</label>
+        <input type="text" class="form-input" placeholder="Número de cédula">
+        <label class="form-label">Documento2</label>
+        <input type="text" class="form-input" placeholder="Primer nombre">
+        <label class="form-label">Documento3</label>
+        <input type="text" class="form-input" placeholder="Segundo nombre">
+      </form>
+      <div class="form-footer text-center">
+        <button class="form-button3 btn btn-danger"  mat-button matStepperNext>Finalizar</button>
+      </div>
+    </div>
+    </mat-step>
+
+  <!-- Icon overrides. -->
+  <ng-template matStepperIcon="phone">
+    <mat-icon>call_end</mat-icon>
+  </ng-template>
+  <ng-template matStepperIcon="chat">
+    <mat-icon>forum</mat-icon>
+  </ng-template>
+</mat-stepper>
